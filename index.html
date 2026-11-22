@@ -1,0 +1,40 @@
+?<!doctype html>
+<html lang="de">//
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <title>Money Quest | Kontoverlauf</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-mark">M</span><span><strong>MONEY QUEST</strong><small>Student run · Season 2026</small></span></a>
+      <div class="top-actions"><span class="status-dot">LIVE DATA</span><button class="icon-button" id="themeToggle" type="button" aria-label="Theme wechseln">☼</button></div>
+    </header>
+
+    <section class="hero-grid">
+      <div class="hero-copy reveal">
+        <p class="kicker">Level 06 · Finanzmission</p>
+        <h1>Dein Geld.<br><em>Dein Spielstand.</em></h1>
+        <p class="hero-text">Erlebe deinen Kontoverlauf als lebendige Reise: Einkommen katapultieren dich nach oben, große Ausgaben ziehen dich zurück.</p>
+        <div class="hero-actions"><button class="play-button" id="playButton" type="button"><span class="play-icon">▶</span><span>Journey starten</span></button><label class="upload-button" for="csvInput">CSV laden<input id="csvInput" type="file" accept=".csv,text/csv"></label></div>
+      </div>
+      <div class="mission-card reveal"><div class="mission-top"><span>AKTUELLE MISSION</span><span class="mission-state">● ACTIVE</span></div><div class="mission-number" id="missionBalance">--</div><div class="mission-label">Kontostand · <span id="missionDate">Daten werden geladen</span></div><div class="progress-track"><span id="balanceProgress"></span></div><div class="mission-footer"><span>LOW POINT <b id="lowPoint">--</b></span><span>RUN <b id="runCount">--</b></span></div></div>
+    </section>
+
+    <section class="hud metrics" aria-label="Kennzahlen"><article class="hud-card cyan"><span class="hud-label">INCOME XP</span><strong id="incomeValue">--</strong><small id="incomeNote">--</small></article><article class="hud-card amber"><span class="hud-label">SPENT ENERGY</span><strong id="expenseValue">--</strong><small id="expenseNote">--</small></article><article class="hud-card violet"><span class="hud-label">NET SCORE</span><strong id="netValue">--</strong><small id="netNote">--</small></article><article class="hud-card pink"><span class="hud-label">MOVES</span><strong id="moveValue">--</strong><small>Transactions analysed</small></article></section>
+
+    <section class="chart-panel reveal" aria-labelledby="chartTitle"><div class="section-heading"><div><p class="kicker">LIVE MAP · BULL RUN</p><h2 id="chartTitle">Balance trajectory</h2></div><div class="legend"><span><i class="legend-income"></i>Income</span><span><i class="legend-expense"></i>Expense</span><span><i class="legend-line"></i>Balance</span></div></div><div class="chart-stage"><canvas id="balanceChart" aria-label="Animierter Kontostandsverlauf"></canvas><div class="chart-empty" id="chartEmpty">Lade deine Finanzreise ...</div><div class="event-pop" id="eventPop" aria-live="polite"></div><div class="skeet-runner bull-runner" id="skeetRunner" aria-hidden="true"><span class="runner-balloon">●</span><span class="bull-horn horn-back"></span><span class="bull-horn horn-front"></span><span class="bull-ear ear-back"></span><span class="bull-ear ear-front"></span><span class="runner-head"><span class="runner-face"></span><span class="bull-muzzle"></span></span><span class="runner-body"><span class="runner-arm arm-back"></span><span class="runner-arm arm-front"></span></span><span class="runner-legs"><span class="runner-leg leg-back"></span><span class="runner-leg leg-front"></span></span><span class="runner-shoe shoe-back"></span><span class="runner-shoe shoe-front"></span><span class="bull-tail"></span></div></div><div class="timeline" id="timeline"></div><div class="chart-launchbar"><div><strong>READY PLAYER ONE</strong><small id="runStatus">Bereit · Start am 01.04.2026</small></div><div class="run-controls"><button class="upload-button pause-button" id="pauseButton" type="button" disabled>Pause</button><button class="play-button chart-play" id="chartPlayButton" type="button"><span class="play-icon">▶</span><span>Bull Run starten</span></button></div></div></section>
+
+    <section class="lower-grid"><article class="panel category-panel reveal"><div class="section-heading compact"><div><p class="kicker">LOADOUT</p><h2>Wofür geht die Energie?</h2></div><span class="panel-badge" id="categoryTotal">--</span></div><div class="category-list" id="categoryList"></div></article><article class="panel events-panel reveal"><div class="section-heading compact"><div><p class="kicker">EVENT LOG</p><h2>Momente, die zählen</h2></div><span class="panel-badge">AUTO</span></div><div class="event-list" id="eventList"></div></article></section>
+
+    <section class="panel transactions-panel reveal"><div class="section-heading table-heading"><div><p class="kicker">TRANSACTION FEED</p><h2>Alle Moves</h2></div><div class="filter-row"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Suche Buchung ..."></label><select id="categoryFilter" aria-label="Kategorie filtern"><option value="all">Alle Kategorien</option></select><select id="typeFilter" aria-label="Einnahmen oder Ausgaben filtern"><option value="all">Einnahmen + Ausgaben</option><option value="income">Nur Einnahmen</option><option value="expense">Nur Ausgaben</option></select><select id="amountFilter" aria-label="Betrag filtern"><option value="all">Jeder Betrag</option><option value="big">Große Moves ab 300 €</option><option value="small">Kleine Moves unter 50 €</option></select><select id="sortFilter" aria-label="Sortierung"><option value="newest">Neueste zuerst</option><option value="oldest">Älteste zuerst</option><option value="largest">Größter Betrag</option></select></div></div><div class="table-scroll"><table><thead><tr><th data-sort="date" tabindex="0">Datum ↕</th><th>Buchung</th><th>Kategorie</th><th class="align-right" data-sort="amount" tabindex="0">Betrag ↕</th><th class="align-right" data-sort="balance" tabindex="0">Balance ↕</th></tr></thead><tbody id="transactionBody"></tbody></table></div><p class="no-results" id="noResults" hidden>Keine Moves für diesen Filter.</p></section>
+    <footer><span>Fictional student data · no real account information</span><span>Money Quest v1.0</span></footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js" defer></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
