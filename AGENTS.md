@@ -49,3 +49,4 @@ Trage jede Änderung an Projektdateien in diesem Abschnitt ein. Ergänze bei jed
 - 2026-11-14 — `app.js`, `style.css`: Pause-Checkpoint mit Datum, Kontostand sowie Einnahmen und Ausgaben des aktuellen Tages ergänzt; Snowboarder-Animationen pausieren vollständig mit.
 - 2026-11-14 — `app.js`, `style.css`: Ständige Verbrauchsanzeige mit Tages- und Wochenkosten, Vergleichswerten und batterieartigen Balken zur Missionskarte hinzugefügt.
 - 2026-11-22 — `index.html`, `AGENTS.md`: Ungültige Zeichen vor und nach dem HTML-Starttag entfernt und Änderung dokumentiert.
+- 2026-11-22 — `.gitignore`, `AGENTS.md`, Git-Verknüpfung `my`: Defekte Submodul-Referenz entfernt und lokalen, separaten Ordner `my/` vom Webseiten-Repository ausgeschlossen, damit GitHub Pages bauen kann.
