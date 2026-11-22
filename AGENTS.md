@@ -48,3 +48,4 @@ Trage jede Änderung an Projektdateien in diesem Abschnitt ein. Ergänze bei jed
 - 2026-11-14 — `app.js`, `js/state.js`: Buchungstabelle um dynamische Zeitfilter für einzelne Monate und Kalenderwochen ergänzt.
 - 2026-11-14 — `app.js`, `style.css`: Pause-Checkpoint mit Datum, Kontostand sowie Einnahmen und Ausgaben des aktuellen Tages ergänzt; Snowboarder-Animationen pausieren vollständig mit.
 - 2026-11-14 — `app.js`, `style.css`: Ständige Verbrauchsanzeige mit Tages- und Wochenkosten, Vergleichswerten und batterieartigen Balken zur Missionskarte hinzugefügt.
+- 2026-11-22 — `index.html`, `AGENTS.md`: Ungültige Zeichen vor und nach dem HTML-Starttag entfernt und Änderung dokumentiert.
