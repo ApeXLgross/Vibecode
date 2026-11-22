@@ -4,7 +4,7 @@
 
 # Dokumentation: Transaktionsverlauf eines Studentenkontos
 
-Die Datei `realistic_student_adjusted_savings.csv` enthält Beispieltransaktionen eines Studentenkontos. Sie umfasst 139 Transaktionen vom 1. April bis zum 27. September 2026. Die Beträge sind in Euro angegeben.
+Die Datei `realistic_student_adjusted_savings.csv` enthält KI-generierte, frei erfundene Beispieltransaktionen. Sie stammen nicht aus einem echten Konto und sind kein echter Kontoauszug. Die Beispieldatei umfasst 139 Einträge vom 1. April bis zum 27. September 2026. Die Beträge sind in Euro angegeben.
 
 ## Spalten
 
@@ -23,7 +23,7 @@ Die CSV-Datei verwendet für die Transaktionen fünf Kategorien: **Geldeingang**
 - Der niedrigste gemeldete Kontostand beträgt **-33,04 €**.
 - Der zuletzt gemeldete Kontostand am 27. September 2026 beträgt **2.097,64 €**.
 
-Die Datei dient als Beispieldatensatz zur Analyse von Einnahmen, Ausgaben und Kontoständen. Das Dashboard in `index.html` lädt die CSV dynamisch und bietet Suche, Kategorie-, Typ-, Betrags- und Sortierfilter. Buchungszeilen sind anklickbar und markieren den zugehörigen Move am Chart; Datum, Betrag und Balance können über die Tabellenköpfe sortiert werden. Dazu kommen ein konstant langsamer 30-Sekunden-Kontostandsverlauf, Ereignismarker für größere Einnahmen und Ausgaben, Pause/Weiter mit aktuellem Datum, Kontostand und Buchung sowie ein Dark-/Light-Mode. Über **Bull Run starten** wird der Chart mit den Ereignissen als Spielstand-Animation abgespielt. Beim direkten Öffnen der HTML-Datei kann die CSV je nach Browser blockiert werden; dafür gibt es die Dateiauswahl **CSV laden**. Für den normalen automatischen Ladevorgang eignet sich ein lokaler Webserver.
+Die Seite lädt die CSV-Datei `realistic_student_adjusted_savings.csv`; eine Excel-Datei wird nicht benötigt. Sie bietet Suche, Kategorie-, Typ-, Betrags- und Sortierfilter, einen animierten Kontostandsverlauf, Ereignismarker, Pause/Weiter und einen Dark-/Light-Mode. Falls der automatische CSV-Ladevorgang beim direkten Öffnen der HTML-Datei blockiert wird, kann die CSV über **CSV laden** ausgewählt werden. Die dargestellten Beträge, Namen und Kontostände sind ausschließlich KI-generierte Beispieldaten.
 
 ## Module
 
@@ -34,4 +34,4 @@ Die Datei dient als Beispieldatensatz zur Analyse von Einnahmen, Ausgaben und Ko
 - `js/charts.js`: animierter Canvas-Kontostandsverlauf mit Event-Markern
 - `style.css`: responsive Game-UI, Themes und Animationen
 
-Die Daten sind Beispieldaten und kein echter Kontoauszug.
+Alle Transaktionen und Kontostände sind KI-generiert und frei erfunden. Sie stellen keine echten Finanzdaten und keinen echten Kontoauszug dar.
