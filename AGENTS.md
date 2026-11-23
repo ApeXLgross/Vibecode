@@ -51,3 +51,4 @@ Trage jede Änderung an Projektdateien in diesem Abschnitt ein. Ergänze bei jed
 - 2026-11-22 — `index.html`, `AGENTS.md`: Ungültige Zeichen vor und nach dem HTML-Starttag entfernt und Änderung dokumentiert.
 - 2026-11-22 — `.gitignore`, `AGENTS.md`, Git-Verknüpfung `my`: Defekte Submodul-Referenz entfernt und lokalen, separaten Ordner `my/` vom Webseiten-Repository ausgeschlossen, damit GitHub Pages bauen kann.
 - 2026-11-22 — `index.html`, `README.md`, `AGENTS.md`: Sichtbaren Hinweis ergänzt, dass Transaktionen KI-generiert und frei erfunden sind; Excel-Datei als Voraussetzung ausgeschlossen und CSV-Datei benannt.
+- 2026-11-23 — `index.html`, `style.css`, `app.js`, `js/state.js`, `js/render.js`, `AGENTS.md`: Buchungstabelle standardmäßig auf fünf Einträge begrenzt und Schaltflächen zum Anzeigen aller bzw. zum Verkleinern ergänzt.

@@ -1,4 +1,4 @@
-export const state = { transactions: [], search: "", category: "all", type: "all", amount: "all", period: "all", sort: "newest", playing: false, theme: "dark" };
+export const state = { transactions: [], search: "", category: "all", type: "all", amount: "all", period: "all", sort: "newest", tableExpanded: false, playing: false, theme: "dark" };
 
 const isoWeekKey = (dateValue) => {
   const date = new Date(`${dateValue}T12:00:00`);

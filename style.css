@@ -93,3 +93,11 @@ body.monochrome .event-pop { box-shadow:0 0 25px rgba(255,255,255,.35); }
 
 /* Persistent daily and weekly spend indicator in the mission card. */
 .usage-battery { margin-top:18px; padding-top:14px; border-top:1px solid var(--line); }.usage-heading { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:10px; color:var(--cyan); font-size:9px; font-weight:900; letter-spacing:.13em; }.usage-heading small { color:var(--muted); font-size:8px; letter-spacing:0; }.usage-row + .usage-row { margin-top:12px; }.usage-label { display:flex; justify-content:space-between; color:var(--muted); font-size:10px; }.usage-label b { color:var(--ink); font-size:11px; }.battery-track { position:relative; height:8px; margin:5px 0 3px; overflow:hidden; border:1px solid #31556e; border-radius:5px; background:repeating-linear-gradient(90deg,#11243a 0 16%,transparent 17% 20%); }.battery-track span { display:block; width:0; height:100%; border-radius:4px; background:linear-gradient(90deg,var(--green),var(--cyan)); box-shadow:0 0 12px var(--cyan); transition:width .8s ease; }.battery-track.weekly span { background:linear-gradient(90deg,var(--amber),var(--pink)); box-shadow:0 0 12px var(--pink); }.usage-row small { color:var(--muted); font-size:8px; }
+
+/* Keep the transaction feed compact until the user asks to see every row. */
+.transaction-controls { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 24px; border-top:1px solid var(--line); color:var(--muted); font-size:10px; }
+.transaction-controls[hidden],.transaction-toggle[hidden] { display:none; }
+.transaction-toggle { min-height:36px; padding:0 15px; border:1px solid var(--cyan); border-radius:12px; color:var(--cyan); background:var(--surface-2); box-shadow:var(--control-shadow); font-family:inherit; font-size:10px; font-weight:900; line-height:1; letter-spacing:.06em; cursor:pointer; transition:transform .18s ease,box-shadow .18s ease,background .18s ease; }
+.transaction-toggle:hover,.transaction-toggle:focus-visible { outline:none; background:rgba(86,229,255,.1); box-shadow:0 8px 20px rgba(86,229,255,.16); transform:translateY(-1px); }
+.transaction-toggle:active { transform:translateY(1px); }
+@media (max-width:620px) { .transaction-controls { padding:12px 13px; }.transaction-toggle { min-height:40px; } }
